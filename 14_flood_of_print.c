@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 /* Function to perform rot13 encryption */
-void rot13_encrypt(char *str);
-	{
+void rot13_encrypt(char *str)
+
+{
 	char c;
 
 	while (*str)
@@ -19,10 +20,9 @@ void rot13_encrypt(char *str);
 	}
 	str++;
 	}
-}
+
 
 	int main(void);
-{
 	char input[100];
 
 	printf("Enter a string: ");
