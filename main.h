@@ -9,6 +9,9 @@
 
 #define UNUSED(x) void(x)
 #define BUFF_SIZE 1024
+/*SIZES*/
+#define S_LONG 2
+#define S_SHORT 1
 
 int _printf(const char *format, ...);
 ssize_t write(int fd, const void *buf size_t count);
