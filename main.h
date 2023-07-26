@@ -7,6 +7,14 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * struct
+ * @format: format specifier
+ * @u: print function for specific type
+ *
+ * Return: int
+ */
+
 #define UNUSED(x) void(x)
 #define BUFF_SIZE 1024
 /*SIZES*/
