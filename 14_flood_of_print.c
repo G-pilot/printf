@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /* Function to perform rot13 encryption */
 void rot13_encrypt(char *str)
