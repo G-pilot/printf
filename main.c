@@ -3,19 +3,12 @@
 #include <stdio.h>
 #include "main.h"
 
-int main(void);
+int main(void)
 {
 	_putchar('H');
 	_putchar('\n');
 	return (0);
-}
-/**
- * main - Entry point
- *
- * Return: Always 0
- */
-int main(void)
-{
+
 	int len;
 	int len2;
 	unsigned int ui;
@@ -45,7 +38,5 @@ int main(void)
 	len2 = printf("Percent:[%%]\n");
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
-	_printf("Unknown:[%r]\n");
-	printf("Unknown:[%r]\n");
 	return (0);
 }
