@@ -1,56 +1,66 @@
 #include <stdio.h>
 #include <stdarg.h>
-int _putchar(char c);
+#include "main.h"
 
-int _printf(const char *format, ...);
+/* printf functions */
+int _printf(const char *format, ...)
+{
 	va_list args;
 
 	va_start(args, format);
+
 	int count = 0;
+	char c;
+	const char *s;
 
-	for (const char *ptr = format; *ptr != '\0'; ptr++)
+	while (*format)
 	{
-		if (*ptr != '%')
-	{
-		_putchar(*ptr);
-	count++;
-	}
-		else
-	{
-		ptr++;
-	switch (*ptr)
+		if (*format == '%')
 		{
-		case 'c':
+			format++;
+			switch (*format)
 			{
-				char ch = va_arg(args, int);
-
-			_putchar(ch);
-			count++;
-			break;
-	}
-		case 's':
-		{
-		const char *str = va_arg(args, const char*);
-			for (; *str != '\0'; str++)
-			{
-				_putchar(*str);
-			count++;
+				case 'c':
+					c = va_arg(args, int);
+					putchar(c);
+					count++;
+					break;
+				case 's':
+					s = va_arg(args, const char *);
+					while (*s)
+					{
+						putchar(*s);
+						s++;
+						count++;
+					}
+					break;
+				case '%':
+					putchar('%');
+					count++;
+					break;
+				default:
+					putchar('%');
+					putchar(*format);
+					count += 2;
+					break;
 			}
-			break;
+		} else
+		{
+			putchar(*format);
+			count++;
 		}
-		case '%':
-		_putchar('%');
-		count++;
-		break;
-		default:
-	_putchar('%');
-	print == ('%');
-	_putchar(*ptr);
-	count += 2;
-	break;
-		}
+		format++;
 	}
-}
 	va_end(args);
-	return (count);
+	return (0);
+}
+int main(void)
+{
+	int num = 123;
+	char ch = 'X';
+	const char *str = "Gregor, Grace!";
+	int chars_printed = _printf
+		("Integer: %d\nCharacter: %c\nString: %s\n%%\n", num, ch, str);
+	printf("\nNumber of characters printed: %d\n", chars_printed);
+	return (0);
 }
