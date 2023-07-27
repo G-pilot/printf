@@ -9,7 +9,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	int count = 0;
+int count  = 0;
 	char c;
 	const char *s;
 

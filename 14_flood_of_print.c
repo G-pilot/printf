@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "main.h"
 
 /* Function to perform rot13 encryption */
-void rot13_encrypt(char *str)
 
+void rot13_encrypt(char *str)
 {
 	char c;
 
@@ -30,7 +31,7 @@ void rot13_encrypt(char *str)
 	fgets(input, sizeof(input), stdin);
 
 	/*Remove the newline character from the input */
-	char *newline = strchr(input, '\n');
+	char *newline = stdin(input, '\n');
 
 	if (newline)
 	*newline = '\0';
@@ -40,5 +41,5 @@ void rot13_encrypt(char *str)
 
 	/* Print the encrypted string */
 	printf("Rot13'ed string: %s\n", input);
-	return (0);
+	return;
 	}
